@@ -1,7 +1,7 @@
-function attach(el, event, func, delay) {
+function attach(el, event, func, userdelay) {
   let throttle = false; // not throttled
   let debounce = false; // holder debounce
-  let delay = delay || false;
+  let delay = userdelay || false;
 
   func(); // initialise function before adding event handlers
 
