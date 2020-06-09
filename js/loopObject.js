@@ -1,7 +1,9 @@
-const loopObject = (object = {}, func) => {
-    for (key in object) {
-    	func(key, object[key]);
-    }
+function loopObject(object, func) {
+	if (object && typeof object === 'object') {
+	    for (key in object) {
+	    	func(key, object[key]);
+	    }
+	}
 }
 
 module.exports = loopObject;
