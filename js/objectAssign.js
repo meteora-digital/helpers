@@ -1,6 +1,6 @@
 function objectAssign(defaultSettings, userSettings) {
     for (key in defaultSettings) {
-    	if (userSettings[key]) {
+    	if (userSettings[key] !== undefined) {
     		defaultSettings[key] = userSettings[key];
     	}
     }
