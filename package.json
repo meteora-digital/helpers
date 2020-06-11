@@ -4,7 +4,7 @@
   "description": "Helper functions",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "gulp"
   },
   "author": "Emmanuel Davies",
   "license": "MIT",
