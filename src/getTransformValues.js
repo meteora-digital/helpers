@@ -14,4 +14,4 @@ function getTransformValues(el) {
   }
 }
 
-module.exports = getTransformValues;
+exports.getTransformValues = getTransformValues;

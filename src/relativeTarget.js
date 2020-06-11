@@ -11,4 +11,5 @@ function relativeTarget(target, relativeElement) {
 		return true;
 	}
 }
-module.exports = relativeTarget;
+
+exports.relativeTarget = relativeTarget;

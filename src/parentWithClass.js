@@ -8,4 +8,4 @@ function parentWithClass(el, className) {
 	return parent;
 }
 
-module.exports = parentWithClass;
+exports.parentWithClass = parentWithClass;

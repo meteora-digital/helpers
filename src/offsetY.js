@@ -9,4 +9,4 @@ function offsetY(el) {
   return offset;
 }
 
-module.exports = offsetY;
+exports.offsetY = offsetY;

@@ -4,4 +4,4 @@ function nodeArray(nodeList) {
 	return array;
 }
 
-module.exports = nodeArray;
+exports.nodeArray = nodeArray;

@@ -8,4 +8,4 @@ function objectAssign(defaultSettings, userSettings) {
     return defaultSettings;
 }
 
-module.exports = objectAssign;
+exports.objectAssign = objectAssign;

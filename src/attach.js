@@ -29,4 +29,4 @@ function attach(el, event, func, userdelay) {
 
 }
 
-module.exports = attach;
+exports.attach = attach;

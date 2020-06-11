@@ -6,4 +6,4 @@ function stagger(arrayOfElements, func, delay = 500) {
   }
 }
 
-module.exports = stagger;
+exports.stagger = stagger;

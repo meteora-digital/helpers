@@ -5,4 +5,4 @@ function Event( event, params ) {
     return evt;
 }
 
-module.exports = Event;
+exports.Event = Event;

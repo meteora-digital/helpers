@@ -6,4 +6,4 @@ function loopObject(object, func) {
 	}
 }
 
-module.exports = loopObject;
+exports.loopObject = loopObject;
