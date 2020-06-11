@@ -90,10 +90,16 @@ function nodeArray(nodeList) {
 }
 
 exports.nodeArray = nodeArray;
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function objectAssign(defaultSettings, userSettings) {
   for (key in defaultSettings) {
     if (userSettings[key] !== undefined) {
-      defaultSettings[key] = userSettings[key];
+      if (_typeof(defaultSettings[key]) === "object" && _typeof(userSettings[key]) === "object") {
+        objectAssign(defaultSettings[key], userSettings[key]);
+      } else {
+        defaultSettings[key] = userSettings[key];
+      }
     }
   }
 
