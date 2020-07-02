@@ -52,6 +52,36 @@ function Event(event, params) {
 }
 
 exports.Event = Event;
+function drawSVG(svg) {
+  var paths = svg.querySelectorAll('path'); // Initialize
+
+  for (var i = 0; i < paths.length; i++) {
+    paths[i].style.strokeDasharray = paths[i].getTotalLength();
+    paths[i].style.strokeDashoffset = paths[i].getTotalLength();
+  } // Our draw function. 1 = erase, 2 = draw
+
+
+  var draw = function draw(duration) {
+    var dir = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+    for (var i = 0; i < paths.length; i++) {
+      paths[i].style.transition = "stroke-dashoffset ".concat(duration / 1000, "s ease");
+      paths[i].style.strokeDashoffset = paths[i].getTotalLength() * dir;
+    }
+  };
+
+  svg.draw = function () {
+    var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1000;
+    return draw(duration, 2);
+  };
+
+  svg.erase = function () {
+    var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1000;
+    return draw(duration, 1);
+  };
+}
+
+exports.drawSVG = drawSVG;
 function getTransformValues(el) {
   var matrix = window.getComputedStyle(el).transform; // Remove the brackets and matrix strings
 
