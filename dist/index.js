@@ -109,7 +109,8 @@ function loopObject(object, func) {
 }
 
 exports.loopObject = loopObject;
-function nodeArray(nodeList) {
+function nodeArray() {
+  var nodeList = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var array = [];
 
   for (var i = 0; i < nodeList.length; i++) {
