@@ -1,5 +1,5 @@
 function drawSVG(svg) {
-	const paths = svg.querySelectorAll('[stroke]:not(g)');
+	const paths = svg.querySelectorAll('[stroke]:not(g), path, line');
 
 	// Initialize
 	for (var i = 0; i < paths.length; i++) {
