@@ -53,7 +53,7 @@ function Event(event, params) {
 
 exports.Event = Event;
 function drawSVG(svg) {
-  var paths = svg.querySelectorAll('[stroke]:not(g), path, line'); // Initialize
+  var paths = svg.querySelectorAll('circle, ellipsis, line, polygon, polyline, rect, path'); // Initialize
 
   for (var i = 0; i < paths.length; i++) {
     paths[i].style.strokeDasharray = paths[i].getTotalLength();

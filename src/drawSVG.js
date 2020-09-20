@@ -1,5 +1,5 @@
 function drawSVG(svg) {
-	const paths = svg.querySelectorAll('[stroke]:not(g), path, line');
+	const paths = svg.querySelectorAll('circle, ellipsis, line, polygon, polyline, rect, path');
 
 	// Initialize
 	for (var i = 0; i < paths.length; i++) {
