@@ -82,6 +82,21 @@ function drawSVG(svg) {
 }
 
 exports.drawSVG = drawSVG;
+function each(selector, func) {
+  var nodeList = document.querySelectorAll(selector);
+  var nodeArray = [];
+
+  for (var i = 0; i < nodeList.length; i++) {
+    nodeArray.push(nodeList[i]);
+  }
+
+  if (func && typeof func === 'function') nodeArray.forEach(function (el, i) {
+    return func(el, i);
+  });
+  return nodeArray;
+}
+
+exports.each = each;
 function getTransformValues(el) {
   var matrix = window.getComputedStyle(el).transform; // Remove the brackets and matrix strings
 
