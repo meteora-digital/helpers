@@ -146,18 +146,22 @@ function objectAssign(defaultSettings, userSettings) {
 }
 
 exports.objectAssign = objectAssign;
-function offsetY(el) {
-  var offset = 0;
+function offset(el) {
+  var offset = {
+    x: 0,
+    y: 0
+  };
 
   while (el) {
-    offset += el.offsetTop;
+    offset.y += el.offsetTop;
+    offset.x += el.offsetLeft;
     el = el.offsetParent;
   }
 
   return offset;
 }
 
-exports.offsetY = offsetY;
+exports.offset = offset;
 function parentWithClass(el, className) {
   var parent = el.parentNode;
 
