@@ -1,16 +1,16 @@
 function offset(el) {
-  let offset = {
+  const obj = {
     x: 0,
     y: 0,
   };
 
   while(el) {
-    offset.y += el.offsetTop;
-    offset.x += el.offsetLeft;
+    obj.y += el.offsetTop;
+    obj.x += el.offsetLeft;
     el = el.offsetParent;
   }
 
-  return offset;
+  return obj;
 }
 
 exports.offset = offset;
