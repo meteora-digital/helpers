@@ -1,5 +1,5 @@
 function objectAssign(defaultSettings, userSettings) {
-    for (key in defaultSettings) {
+    for (let key in defaultSettings) {
         if (userSettings[key] !== undefined) {
 
             if (typeof defaultSettings[key] === "object" && typeof userSettings[key] === "object") {
