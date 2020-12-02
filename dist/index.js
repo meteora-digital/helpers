@@ -3,8 +3,20 @@ function attach(el, event, func, userdelay) {
 
   var debounce = false; // holder debounce
 
-  var delay = userdelay || false;
+  var delay = userdelay || false; // Feature detection
+
+  var passiveIfSupported = false;
   func(); // initialise function before adding event handlers
+
+  try {
+    window.addEventListener("test", null, Object.defineProperty({}, "passive", {
+      get: function get() {
+        passiveIfSupported = {
+          passive: false
+        };
+      }
+    }));
+  } catch (err) {}
 
   var attachment = function attachment(e) {
     if (delay) {
@@ -28,9 +40,15 @@ function attach(el, event, func, userdelay) {
   };
 
   event.split(' ').forEach(function (type) {
-    el.addEventListener(type, function (e) {
-      return attachment(e);
-    });
+    if (type === 'scroll' && passiveIfSupported) {
+      el.addEventListener(type, function (e) {
+        return attachment(e);
+      }, passiveIfSupported);
+    } else {
+      el.addEventListener(type, function (e) {
+        return attachment(e);
+      });
+    }
   });
 }
 
