@@ -1,6 +1,6 @@
 {
   "name": "@meteora-digital/helpers",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Helper functions",
   "main": "dist/index.js",
   "scripts": {
